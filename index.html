@@ -3,8 +3,11 @@
 	
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<title>Hello...</title>
 		<link rel="stylesheet" href="style.css">
+		
 	</head>
 	
 	<!-- load jquery minified js -->
@@ -18,14 +21,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/scrolloverflow.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
 	
-	<body style="min-width:800px;">
+	<body>
 		
 		<div id="header" class="g-position-fixed g-center-x h4" style="
-			border-bottom: 3px solid #3535fc;
 			top: 0px;
 			margin: 0px;
 			width: 100vw;
-			min-width: 600px;
 			height: 60px;
 			line-height: 55px;
 			color: #3535fc;
@@ -35,34 +36,38 @@
 				margin-left: 20px;
 				float: left;
 				display: inline-block;">
-				gradient	
+				<img src="images/logo-only-text.png" height="22">
 			</div>
 			<div style="
 				margin-right: 20px;
 				float: right;
 				text-align: center;">
-				<a href="#section4" style="color:#3535fc;">
-					Subscribe to our newsletter
+				<a href="#join-us" style="color:#3535fc;">
+					Join our mission!
 				</a>
 			</div>
+			<div class="g-border-div g-position-absolute" style="
+				height:3px;
+				bottom: 0px;	
+				"></div>
 		</div>
 		
 		<div id="fullpage">
 		
-			<div class="section">
+			<div class="section" data-anchor="home">
 				<div class="container g-window-height g-position-relative" style="text-align:center;">
 					<div class="g-center g-position-absolute" style="color: #3535fc;">
-						<img class="" src="images/logo.png" style="width:150px;height:150px;">	
+						<img class="" src="images/logo-no-text.png" style="width:150px;">	
 						<div class="h1">Priced With Kindness.</div>	
 						<div class="h4">Gradient is sliding scale pricing that considers your ability to pay.</div>	
 					</div>
 					<div class="g-position-absolute g-center-x" style="bottom:20px;">
-						<div class="hairline-down-arrow"></div>
+						<a href="#how-does-it-work"><div class="hairline-down-arrow"></div></a>
 					</div>
 				</div>	
 			</div>	
 			
-			<div class="section">
+			<div class="section" data-anchor="how-does-it-work">
 			
 				<!-- slide 1 -->
 				<div class="slide container g-window-height" style="text-align:center;">
@@ -107,13 +112,27 @@
 				</div>		
 			</div>
 			
-			<div class="section">
+			<div class="section" data-anchor="why-gradient">
 				<div class="container">
-					
+					<div class="col-xs-3 g-position-relative">
+						<img class="g-stamp g-center-x g-position-absolute" src="images/logo.png" style="margin-top:20px;">
+					</div>	
+					<div class="col-xs-8">
+						<div class="h3">Look for Gradient when shopping online!</div>	
+						<div class="h5">If you see our seal on a product, it is priced on Gradient’s sliding scale system. And you are shopping at a store that is working to treat its customers equitably!</div>
+						<br>
+						<div class="h3">What does it do?</div>	
+						<div class="h5">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
+						<div class="h5">For people whose finances are tight, Gradient lowers prices to ease the burden of purchasing. For people whose finances are above median prices will be higher, and that increase will contribute directly to helping other members of the community</div>
+						<br>
+						<div class="h3">What does it mean?</div>	
+						<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
+						<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build towards that goal together.</div>
+					</div>	
 				</div>
 			</div>
 			
-			<div class="section">
+			<div class="section" data-anchor="join-us">
 				<div class="container">
 					<div class="g-position-absolute g-center" style="text-align:center;">
 						
@@ -140,8 +159,8 @@
 								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f6165db2f72795931525c002b_d960918538" tabindex="-1" value=""></div>
 								<br>
 								<div class="clear" style="text-align:center;">
-									<div class=""></div>
 									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+									<div id="mc-verify" class="h4" style="color:#3535fc;opacity:0;">To verify your email, please click on the link that we sent you.</div>
 								</div>
 						  </div>
 						</form>
@@ -177,12 +196,13 @@
 						<br>
 						<br>
 						<br>
-						<br>
 						
 						<div class="h4">Are you interested in <span style="color:#3535fc;">Gradient</span> as a  business owner?</div>
-						<div class="h4">Please email us at <a href="" target="_blank" style="color:#3535fc;">gradient@hellovelocity.com</a> and we'll get back to you.</div>
+						<div class="h4">Please email us at <a href="mailto:gradient@hellovelocity.com" target="_blank" style="color:#3535fc;">gradient@hellovelocity.com</a> and we'll get back to you.</div>
 						
 					</div>
+					
+					<a href="#home"><div class="h5 g-center-x g-position-absolute" style="color:#3535fc;bottom:20px;">back to top</div></a>
 				</div>
 			</div>
 				
@@ -196,12 +216,12 @@
 			// start fullpage.js
 	    $('#fullpage').fullpage({
 				navigation: false,
-				anchors: ['section1', 'section2', 'section3', 'section4']
+				anchors: ['home', 'how-does-it-work', 'why-gradient', 'join-us']
 	    });
 	    
 	    // click on Mailchimp submit
 	    $("#mc-embedded-subscribe").click(function() {
-					    	
+				$("#mc-verify").css("opacity","1.0");	
 	    });
 	    
 		});
