@@ -29,6 +29,9 @@
 .container {
   padding-top: 76px;
 }
+.underline {
+  text-decoration: underline;
+}
 .hairline-down-arrow {
   width: 65px;
   height: 65px;
@@ -53,6 +56,7 @@
   height: 65px;
   position: relative;
   background-color: white;
+  border-width: 0 !important;
 }
 .fp-controlArrow:after {
   content: "";
@@ -78,6 +82,9 @@
 }
 .fp-prev:after {
   transform: rotate(135deg) translate(-50%) skew(10deg, 10deg);
+}
+.fp-tableCell {
+  height: 100% !important;
 }
 
 @media(max-width:767px){
@@ -122,4 +129,28 @@
   background: -webkit-linear-gradient(-45deg,  rgba(225,161,244,1) 0%,rgba(53,53,252,1) 67%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg,  rgba(225,161,244,1) 0%,rgba(53,53,252,1) 67%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1a1f4', endColorstr='#3535fc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* MAIL CHIMP */
+#mce-EMAIL {
+  border: 0px;
+  border-bottom: 2px solid #3535fc;
+  width: 560px;
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+  color: #3535fc;
+}	
+#mce-EMAIL:focus ,
+#mc-embedded-subscribe:focus {
+  outline-width: 0;
+}
+#mc-embedded-subscribe {
+  border: 0px;
+  padding: 10px 20px;
+  background-color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #3535fc;
 }

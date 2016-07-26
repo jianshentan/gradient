@@ -6,7 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Hello...</title>
-		<link rel="stylesheet" href="style.css">
+		
+		<!-- add custom stylesheets -->
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<% if (mobile == "true") { %>
+      <link rel="stylesheet" href="stylesheets/m_style.css">
+    <% } %>
 		
 	</head>
 	
@@ -36,7 +41,11 @@
 				margin-left: 20px;
 				float: left;
 				display: inline-block;">
+		    <% if (mobile == "true") { %>
+				<img src="images/logo-only-text.png" style="width:20vw;">
+				<% } else { %>
 				<img src="images/logo-only-text.png" height="22">
+				<% } %>
 			</div>
 			<div style="
 				margin-right: 20px;
@@ -56,7 +65,7 @@
 		
 			<div class="section" data-anchor="home">
 				<div class="container g-window-height g-position-relative" style="text-align:center;">
-					<div class="g-center g-position-absolute" style="color: #3535fc;">
+					<div class="g-center g-position-absolute" style="color: #3535fc;width:90vw;">
 						<img class="" src="images/logo-no-text.png" style="width:150px;">	
 						<div class="h1">Priced With Kindness.</div>	
 						<div class="h4">Gradient is sliding scale pricing that considers your ability to pay.</div>	
@@ -71,49 +80,104 @@
 			
 				<!-- slide 1 -->
 				<div class="slide container g-window-height" style="text-align:center;">
-					<br>	
-					<div class="h2" style="
-						top: 36px;
-						text-align:center;
-						color: #3535fc">
-						Imagine an equitable way to shop.
+					<% if (mobile != "true") { %> <br> <% } %>
+					
+					<% if (mobile == "true") { %>
+					<div class="h3" style="margin-top:-40px;margin-bottom:20px;top:36px;text-align:center;color:#3535fc">
+					<% } else { %>
+					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
+					<% } %>
+						1. Gradient is an equitable way to shop.
 					</div>
+					<% if (mobile != "true") { %> 
 					<br>
 					<br>
-					<img class="g-slides" src="images/slide1.png">
+					<% } %>
+					<% if (mobile == "true") { %>
+					  <img class="g-slides" src="images/m_slide1.png">
+          <% } else { %>
+					  <img class="g-slides" src="images/d_slide1.png">
+          <% } %>
 				</div>
 				
 				<!-- slide 2 -->
 				<div class="slide container g-window-height" style="text-align:center;">
-					<br>		
-					<div class="h2" style="
-						top: 36px;
-						text-align:center;
-						color: #3535fc">
-						Imagine an equitable way to shop.
+					<% if (mobile != "true") { %> <br> <% } %>
+					<% if (mobile == "true") { %>
+					<div class="h3" style="margin-top:-40px;margin-bottom:20px;top:36px;text-align:center;color:#3535fc">
+					<% } else { %>
+					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
+					<% } %>
+					  2. Log into your Gradient account.
 					</div>
+					<% if (mobile != "true") { %> 
 					<br>
 					<br>
-					<img class="g-slides" src="images/slide2.png">				
+					<% } %>
+					<% if (mobile == "true") { %>
+					  <img class="g-slides" src="images/m_slide1.png">
+          <% } else { %>
+					  <img class="g-slides" src="images/d_slide2.png">
+          <% } %>
 				</div>
 					
 				<!-- slide 3 -->
 				<div class="slide container g-window-height" style="text-align:center;">
-					<br>		
-					<div class="h2" style="
-						top: 36px;
-						text-align:center;
-						color: #3535fc">
-						Imagine an equitable way to shop.
+					<% if (mobile != "true") { %> <br> <% } %>
+					<% if (mobile == "true") { %>
+					<div class="h3" style="margin-top:-40px;margin-bottom:-20;top:36px;text-align:center;color:#3535fc">
+					<% } else { %>
+					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
+					<% } %>
+					  3. Get your price, based on your income.
 					</div>
+					<% if (mobile != "true") { %>
 					<br>
 					<br>
-					<img class="g-slides" src="images/slide3.png">				
+					<% } %>
+					<% if (mobile == "true") { %>
+					  <img class="g-slides" src="images/m_slide3.png">
+          <% } else { %>
+					  <img class="g-slides" src="images/d_slide3.png">
+          <% } %>
 				</div>		
+					
+				<!-- slide 4 -->
+				<div class="slide container g-window-height" style="text-align:center;">
+					<% if (mobile != "true") { %> <br> <% } %>
+					<% if (mobile == "true") { %>
+					<div class="h3" style="margin-top:-40px;margin-bottom:-20;top:36px;text-align:center;color:#3535fc">
+					<% } else { %>
+					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
+					<% } %>
+					  4. Checkout out, and feel good.
+					</div>
+					<% if (mobile != "true") { %> 
+					<br>
+					<br>
+					<% } %>
+					<% if (mobile == "true") { %>
+					  <img class="g-slides" src="images/m_slide4.png">
+          <% } else { %>
+					  <img class="g-slides" src="images/d_slide4.png">
+          <% } %>
+				</div>
 			</div>
 			
 			<div class="section" data-anchor="why-gradient">
 				<div class="container">
+					<% if (mobile == "true") { %>
+				  <div style="text-align:center;width:100%;margin-top:-5vh;">
+				    <img class="g-stamp" src="images/logo.png" style="width:20vw;">
+				  </div>
+				  <br>
+				  <div class="h4 underline">Look for Gradient when shopping online!</div>	
+					<div class="h5">If you see our seal on a product, it is priced on Gradient’s sliding scale system. And you are shopping at a store that is working to treat its customers equitably!</div>
+					<div class="h4 underline">What does it do?</div>	
+					<div class="h5">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
+					<div class="h5">For people whose finances are tight, Gradient lowers prices to ease the burden of purchasing. For people whose finances are above median prices will be higher, and that increase will contribute directly to helping other members of the community</div>
+					
+          <% } else { %>
 					<div class="col-xs-3 g-position-relative">
 						<img class="g-stamp g-center-x g-position-absolute" src="images/logo.png" style="margin-top:20px;">
 					</div>	
@@ -129,18 +193,31 @@
 						<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
 						<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build towards that goal together.</div>
 					</div>	
+          <% } %>
 				</div>
 			</div>
 			
+			<% if (mobile == "true") { %>
+	    <div class="section" data-anchor="why-gradient2">
+	      <div class="container">
+		      <div class="h4 underline">What does it mean?</div>	
+					<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
+					<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build toward</div>     
+	      </div>
+	    </div>
+			<% } %>
+			
 			<div class="section" data-anchor="join-us">
 				<div class="container">
-					<div class="g-position-absolute g-center" style="text-align:center;">
+					<div class="g-position-absolute g-center" style="text-align:center;width:90vw;">
 						
 						<div class="h2" style="color:#3535fc;font-weight:700;">Sign up below</div>
 						<div class="h4" style="color:#3535fc;">Join us to build systems for greater economic equity!</div>
 						
+					  <% if (mobile != "true") { %>
 						<br>
 						<br>
+						<% } %>
 						<br>
 						<br>
 						
@@ -165,40 +242,17 @@
 						  </div>
 						</form>
 						</div>
-						
-						<style>
-							#mce-EMAIL {
-								border: 0px;
-								border-bottom: 2px solid #3535fc;
-								width: 560px;
-								font-size: 56px;
-								font-weight: 700;
-								text-align: center;
-								color: #3535fc;
-							}	
-							#mce-EMAIL:focus ,
-							#mc-embedded-subscribe:focus {
-								outline-width: 0;
-							}
-							#mc-embedded-subscribe {
-								border: 0px;
-								padding: 10px 20px;
-								background-color: white;
-								font-size: 24px;
-								font-weight: 700;
-								text-decoration: underline;
-								color: #3535fc;
-							}
-						</style>
-						
+
 						<!--End mc_embed_signup-->
 						
+					  <% if (mobile != "true") { %>
 						<br>
 						<br>
+						<% } %>
 						<br>
 						
-						<div class="h4">Are you interested in <span style="color:#3535fc;">Gradient</span> as a  business owner?</div>
-						<div class="h4">Please email us at <a href="mailto:gradient@hellovelocity.com" target="_blank" style="color:#3535fc;">gradient@hellovelocity.com</a> and we'll get back to you.</div>
+						<div class="h5">Are you interested in <span style="color:#3535fc;">Gradient</span> as a  business owner?</div>
+						<div class="h5">Please email us at <a href="mailto:gradient@hellovelocity.com" target="_blank" style="color:#3535fc;">gradient@hellovelocity.com</a> and we'll get back to you.</div>
 						
 					</div>
 					
@@ -228,3 +282,4 @@
 	</script>
 	
 </html>
+
