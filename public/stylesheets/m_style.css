@@ -9,6 +9,7 @@
 }
 .h4 {
     font-size: 4vw !important;
+    font-weight: 400 !important;
 }
 .h5 {
     font-size: 3.8vw !important;
@@ -19,7 +20,21 @@
     width: 90vw;
     font-size: 12vw;
 }
+.container {
+    padding-top: 0px !important;
+}
 
 .g-slides {
-    width:60vw;
+    width: 55vw;
+}
+.slide {
+    padding-top: 0px;
+}
+.g-slide-title {
+    padding-left:8vw;
+    padding-right:8vw;
+    margin-top: 20px;
+    margin-bottom:20px;
+    text-align:center;
+    color:#3535fc;
 }

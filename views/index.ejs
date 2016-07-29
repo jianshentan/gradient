@@ -27,11 +27,17 @@
     <meta property="twitter:url" content="http://www.gradientpay.com" >
     <meta property="twitter:image" content="http://www.gradientpay.com/images/share-banner.png" >
     		
+		<!-- add bootstrap stylesheets -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  
 		<!-- add custom stylesheets -->
 		<link rel="stylesheet" href="stylesheets/style.css">
 		<% if (mobile == "true") { %>
       <link rel="stylesheet" href="stylesheets/m_style.css">
     <% } %>
+		
+		<!-- add fullpage.js stylesheets -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css">
 		
 		<script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -46,17 +52,16 @@
 	
 	<!-- load jquery minified js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<!-- load bootstrap minified js/css -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- load bootstrap minified js -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- load fullpage.js library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/jquery.easings.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/vendors/scrolloverflow.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.min.js"></script>
 	
 	<body>
 		
+		<% if (mobile != "true") { %>
 		<div id="header" class="g-position-fixed g-center-x h4" style="
 			top: 0px;
 			margin: 0px;
@@ -70,11 +75,7 @@
 				margin-left: 20px;
 				float: left;
 				display: inline-block;">
-		    <% if (mobile == "true") { %>
-				<img src="images/logo-only-text.png" style="width:20vw;">
-				<% } else { %>
-				<img src="images/logo-only-text.png" height="22">
-				<% } %>
+				<a href="#home"><img src="images/logo-only-text.png" height="22"></a>
 			</div>
 			<div style="
 				margin-right: 20px;
@@ -90,10 +91,43 @@
 				bottom: 0px;	
 				"></div>
 		</div>
+		<% } %>
 		
 		<div id="fullpage">
 		
-			<div class="section" data-anchor="home">
+			<div class="section g-position-relative" data-anchor="home">
+			  <% if (mobile == "true") { %>
+    		<div id="header" class="g-position-absolute g-center-x h4" style="
+    			top: 0px;
+    			margin: 0px;
+    			width: 100vw;
+    			height: 60px;
+    			line-height: 55px;
+    			color: #3535fc;
+    			background-color: white;
+    			z-index: 100;">
+    			<div style="
+    				margin-left: 20px;
+    				float: left;
+    				display: inline-block;">
+    				<img src="images/logo-only-text.png" style="width:20vw;">
+    			</div>
+    			<div style="
+    				margin-right: 20px;
+    				float: right;
+    				text-align: center;">
+    				<a href="#join-us" style="color:#3535fc;">
+    					Join our mission
+    					<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    				</a>
+    			</div>
+    			<div class="g-border-div g-position-absolute" style="
+    				height:3px;
+    				bottom: 0px;	
+    				"></div>
+    		</div>
+    		<% } %>
+    		
 				<div class="container g-window-height g-position-relative" style="text-align:center;">
 					<div class="g-center g-position-absolute" style="color: #3535fc;width:90vw;">
 						<img class="" src="images/logo-no-text.png" style="width:150px;">	
@@ -113,7 +147,7 @@
 					<% if (mobile != "true") { %> <br> <% } %>
 					
 					<% if (mobile == "true") { %>
-					<div class="h3" style="margin-top:-40px;margin-bottom:20px;top:36px;text-align:center;color:#3535fc">
+					<div class="h3 g-slide-title">
 					<% } else { %>
 					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
 					<% } %>
@@ -134,7 +168,7 @@
 				<div class="slide container g-window-height" style="text-align:center;">
 					<% if (mobile != "true") { %> <br> <% } %>
 					<% if (mobile == "true") { %>
-					<div class="h3" style="margin-top:-40px;margin-bottom:20px;top:36px;text-align:center;color:#3535fc">
+					<div class="h3 g-slide-title">
 					<% } else { %>
 					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
 					<% } %>
@@ -145,7 +179,7 @@
 					<br>
 					<% } %>
 					<% if (mobile == "true") { %>
-					  <img class="g-slides" src="images/m_slide1.png">
+					  <img class="g-slides" src="images/m_slide2.png">
           <% } else { %>
 					  <img class="g-slides" src="images/d_slide2.png">
           <% } %>
@@ -155,7 +189,7 @@
 				<div class="slide container g-window-height" style="text-align:center;">
 					<% if (mobile != "true") { %> <br> <% } %>
 					<% if (mobile == "true") { %>
-					<div class="h3" style="margin-top:-40px;margin-bottom:-20;top:36px;text-align:center;color:#3535fc">
+					<div class="h3 g-slide-title">
 					<% } else { %>
 					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
 					<% } %>
@@ -176,11 +210,11 @@
 				<div class="slide container g-window-height" style="text-align:center;">
 					<% if (mobile != "true") { %> <br> <% } %>
 					<% if (mobile == "true") { %>
-					<div class="h3" style="margin-top:-40px;margin-bottom:-20;top:36px;text-align:center;color:#3535fc">
+					<div class="h3 g-slide-title">
 					<% } else { %>
 					<div class="h2" style="margin-top:0px;top:36px;text-align:center;color:#3535fc">
 					<% } %>
-					  4. Checkout out, and feel good.
+					  4. Checkout out, and feel good about it.
 					</div>
 					<% if (mobile != "true") { %> 
 					<br>
@@ -195,44 +229,45 @@
 			</div>
 			
 			<div class="section" data-anchor="why-gradient">
-				<div class="container">
 					<% if (mobile == "true") { %>
-				  <div style="text-align:center;width:100%;margin-top:-5vh;">
-				    <img class="g-stamp" src="images/logo.png" style="width:20vw;">
-				  </div>
-				  <br>
-				  <div class="h4 underline">Look for Gradient when shopping online!</div>	
-					<div class="h5">If you see our seal on a product, it is priced on Gradient’s sliding scale system. And you are shopping at a store that is working to treat its customers equitably!</div>
-					<div class="h4 underline">What does it do?</div>	
-					<div class="h5">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
-					<div class="h5">For people whose finances are tight, Gradient lowers prices to ease the burden of purchasing. For people whose finances are above median prices will be higher, and that increase will contribute directly to helping other members of the community</div>
-					
+  				<div class="container" style="width:80vw;margin-left:10vw;color:#3535fc;">
+  				  <div style="text-align:center;width:100%;margin-top:-5vh;">
+  				    <img class="g-stamp" src="images/gradient-cert.png" style="width:20vw;">
+  				  </div>
+  				  <br>
+  					<div class="h4">If you see our seal on a product, it means you are shopping at a store that is working to treat its customers equitably with Gradient’s sliding scale!</div>
+  					<div class="h3">What does it do?</div>	
+  					<div class="h4">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
+  					<div class="h4">For people whose finances are tight, Gradient lowers prices. For people whose finances are above median, prices are higher, and that increase contributes directly to helping other members of the community</div>
+  				</div>
+  					
           <% } else { %>
-					<div class="col-xs-3 g-position-relative">
-						<img class="g-stamp g-center-x g-position-absolute" src="images/logo.png" style="margin-top:20px;">
-					</div>	
-					<div class="col-xs-8">
-						<div class="h3">Look for Gradient when shopping online!</div>	
-						<div class="h5">If you see our seal on a product, it is priced on Gradient’s sliding scale system. And you are shopping at a store that is working to treat its customers equitably!</div>
-						<br>
-						<div class="h3">What does it do?</div>	
-						<div class="h5">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
-						<div class="h5">For people whose finances are tight, Gradient lowers prices to ease the burden of purchasing. For people whose finances are above median prices will be higher, and that increase will contribute directly to helping other members of the community</div>
-						<br>
-						<div class="h3">What does it mean?</div>	
-						<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
-						<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build towards that goal together.</div>
-					</div>	
+				  <div class="container" style="width:80vw;margin-left:10vw;color:#3535fc;">
+  					<div class="col-xs-3 g-position-relative">
+  						<img class="g-stamp g-center-x g-position-absolute" src="images/gradient-cert.png" style="margin-top:20px;">
+  					</div>	
+  					<div class="col-xs-8">
+  						<div class="h3">Look for Gradient when shopping online!</div>	
+  						<div class="h5">If you see our seal on a product, it is priced on Gradient’s sliding scale system. And you are shopping at a store that is working to treat its customers equitably!</div>
+  						<br>
+  						<div class="h3">What does it do?</div>	
+  						<div class="h5">When you make an account through Gradient and connect your online bank account(s), Gradient estimates your annual income and adjusts the price you pay, within a certain range.</div>
+  						<div class="h5">For people whose finances are tight, Gradient lowers prices to ease the burden of purchasing. For people whose finances are above median prices will be higher, and that increase will contribute directly to helping other members of the community</div>
+  						<br>
+  						<div class="h3">What does it mean?</div>	
+  						<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
+  						<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build towards that goal together.</div>
+  					</div>	
+				  </div>
           <% } %>
-				</div>
 			</div>
 			
 			<% if (mobile == "true") { %>
 	    <div class="section" data-anchor="why-gradient2">
-	      <div class="container">
-		      <div class="h4 underline">What does it mean?</div>	
-					<div class="h5">By using Gradient you are participating in a healthier, more responsible, economic process</div>
-					<div class="h5">Economic disparity in the US is the largest in all of the western world. Gradient and its users believe that we have an obligation towards economic equity -- and that we can build toward</div>     
+	      <div class="container" style="width:80vw;margin-left:10vw;color:#3535fc;">
+					<div class="h2">Economic disparity in the US is the largest in all of the western world.</div>
+					<div class="h2">Gradient and its users believe that we have an obligation towards economic equity -- and that we can build toward that goal together.</div>     
+					<div class="h2">By using Gradient you are participating in a healthier, more responsible, economic process</div>
 	      </div>
 	    </div>
 			<% } %>
@@ -294,15 +329,30 @@
 		
 	</body>
 	
+	<% if (mobile == "true" ){ %>
 	<script> 
 		$(document).ready(function() {
-			
+			// start fullpage.js
+	    $('#fullpage').fullpage({
+				navigation: false,
+				anchors: ['home', 'how-does-it-work', 'why-gradient', 'why-gradient2', 'join-us']
+	    });
+		});
+	</script>
+	<% } else { %>
+	<script> 
+		$(document).ready(function() {
 			// start fullpage.js
 	    $('#fullpage').fullpage({
 				navigation: false,
 				anchors: ['home', 'how-does-it-work', 'why-gradient', 'join-us']
 	    });
+		});
+	</script>
+	<% } %>
 	    
+	<script> 
+		$(document).ready(function() {
 	    // click on Mailchimp submit
 	    $("#mc-embedded-subscribe").click(function() {
 				$("#mc-verify").css("opacity","1.0");	
